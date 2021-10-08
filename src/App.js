@@ -2,10 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavBar} from './components/NavBar/NavBar';
-import {ItemListContainer} from './components/Container/ItemListContainer';
+import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import { Clock } from './components/Clock/Clock';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  /* const [clock, setClock] = useState(true);
+
+  useEffect (() =>{
+    setTimeout(() => {
+      setClock(!clock)
+    }, 5000)
+
+  }, [clock]) */
+
+
   return (
     <div className="App">
         <>
