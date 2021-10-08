@@ -8,18 +8,18 @@ header {
   .logo-titulo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 1rem;
+    //justify-content: space-between;
+    margin: 0.5rem;
 
     h1 {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 900;
     }
   }
 
   .logo-imagen {
-    width: 35%;
-    height: 35%;
+    width: 25%;
+    height: 25%;
   }
 
   .nav-menu {
@@ -27,6 +27,7 @@ header {
     font-family: "Overlock", cursive;
     font-weight: 900;
     font-style: normal;
+    font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

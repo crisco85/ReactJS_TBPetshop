@@ -1,6 +1,6 @@
 import React from 'react';
 import { CartWidget } from '../CartWidget/CartWidget';
-import Logo from './Logo.png';
+import Logo from './Logo3.png';
 import './NavBar.scss';
 
 export const NavBar = () => {
