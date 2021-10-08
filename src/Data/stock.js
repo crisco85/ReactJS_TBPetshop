@@ -25,6 +25,6 @@ export const stock = [
         name: "Atomo",
         description: "Atomo mediano con cascabel",
         price: 1500,
-        img: "https://w7.pngwing.com/pngs/962/506/png-transparent-dog-toys-puppy-natural-rubber-dog-game-animals-pet.png"
+        img: "https://http2.mlstatic.com/D_NQ_NP_804709-MCO42099005945_062020-O.jpg"
     }
 ]

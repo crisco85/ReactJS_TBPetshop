@@ -1,11 +1,12 @@
 import React from "react";
+import './Item.scss';
 import {Card, Button} from 'react-bootstrap';
 
 export const Item = (props) =>{
 
     return(
-        <div>
-            <Card style={{ width: '18rem' }} >
+        <div className="mycards">
+            <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={props.img} />
                 <Card.Body>
                     <Card.Title>{props.name}</Card.Title>

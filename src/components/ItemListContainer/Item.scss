@@ -1,0 +1,17 @@
+.mycards {
+  width: 25%;
+  margin: 1rem;
+
+  .card-img-top {
+    width: 13vw;
+    height: 13vw;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: darkgoldenrod;
+    box-shadow: darkgreen;
+  }
+}
