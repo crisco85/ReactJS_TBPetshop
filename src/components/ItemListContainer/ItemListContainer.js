@@ -3,6 +3,11 @@ import './ItemListContainer.scss';
 import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
 
+//query params
+//const URL = 'https://www.google.com/search?q=coderhouse%limit=10'
+
+
+
 export const ItemListContainer = () => {
 
     const[items, setItems] = useState([]);

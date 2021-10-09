@@ -16,7 +16,7 @@ export const NavBar = () => {
                         <li><p>Alimento</p></li>
                         <li><p>Accesorios</p></li>
                         <li><p>Higiene</p></li>
-                        <li><CartWidget/></li>
+                        <li><CartWidget /></li>
                     </ul>
                 </div>
             </nav>
