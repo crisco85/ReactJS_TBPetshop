@@ -10,7 +10,7 @@ import { Itemlist } from "./ItemList";
 
 export const ItemListContainer = () => {
 
-    const[items, setItems] = useState([]);
+    const[items, setItems] = useState();
     const[loading, setLoading] = useState(false);
 
     console.log(items);
