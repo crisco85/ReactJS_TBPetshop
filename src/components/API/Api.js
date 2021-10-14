@@ -30,9 +30,9 @@ export const Api = () =>{
                     setId(res.id)
                 })
                 
-                .catch(err => {
+                /* .catch(err => {
                     setPokemon(err)
-                })
+                }) */
 
         }
     }

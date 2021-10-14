@@ -4,24 +4,26 @@ import {NavBar} from './components/NavBar/NavBar';
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import { Clock } from './components/Clock/Clock';
 import { Api } from './components/API/Api';
-
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 function App() {
 
   return (
-    <div className="App">
-        <>
-          <NavBar/>
-          <Clock />
-        </>
-        <>
-          <ItemListContainer greeting = "Bienvenidos a TB Petshop"/>
-        </>
-        <>
-          <Api />
-        </>
+    <BrowserRouter>
+        <div className="App">
+            <>
+              <NavBar/>
+              <Clock />
+            </>
+            <>
+              <ItemListContainer greeting = "Bienvenidos a TB Petshop"/>
+            </>
+        
 
-    </div>
+        </div>
+    
+    </BrowserRouter>
+    
     
   );
 }
