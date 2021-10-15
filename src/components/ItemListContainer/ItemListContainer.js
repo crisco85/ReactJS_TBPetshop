@@ -16,15 +16,20 @@ export const ItemListContainer = () => {
 
     console.log(items);
 
-    const params = useParams();
-    console.log(params);
+    //const params = useParams();
+    const {categoryId} = useParams();  //Desestructuro
 
     useEffect(() =>{
         setLoading(true)
 
         pedirProductos()
             .then((res) => {
-                setItems(res)
+                if(categoryId){
+                    setItems(res.filter (prod => prod.category === categoryId))
+                } else {
+                    setItems(res)
+                }
+                
             })
             .catch((err) => console.log(err))
             .finally(() => {
@@ -32,7 +37,7 @@ export const ItemListContainer = () => {
                 console.log("Fin")
             })
             
-    }, [])
+    }, [categoryId])  //categoryId como dependencia
 
     
 
