@@ -4,7 +4,7 @@ import {NavBar} from './components/NavBar/NavBar';
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import { Clock } from './components/Clock/Clock';
 import { Api } from './components/API/Api';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 function App() {
 
@@ -15,11 +15,20 @@ function App() {
               <NavBar/>
               <Clock />
             </>
-            <>
-              <ItemListContainer greeting = "Bienvenidos a TB Petshop"/>
-            </>
         
+        <Switch>
+            <Route exact path="/">
+              <ItemListContainer />
+            </Route>
+            
+            <Route exact path="/productos/:categoryId">
+              <ItemListContainer />
+            </Route>
 
+            <Route path="*">
+              <Redirect to="/"/>
+            </Route>
+        </Switch>
         </div>
     
     </BrowserRouter>

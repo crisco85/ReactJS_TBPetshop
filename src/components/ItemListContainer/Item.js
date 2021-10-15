@@ -2,7 +2,7 @@ import React from "react";
 import './Item.scss';
 import {Card, Button} from 'react-bootstrap';
 
-export const Item = ({id, name, description, price, img}) =>{
+export const Item = ({id, name, description, price, img, category}) =>{
 
     return(
         <div className="mycards">
@@ -10,7 +10,8 @@ export const Item = ({id, name, description, price, img}) =>{
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
-                    <Card.Text>{description}</Card.Text>
+                    <Card.Text>Categoria: {category}</Card.Text>
+                    <Card.Text>Descripción: {description}</Card.Text>
                     <Card.Text>Precio: $ {price}</Card.Text>
                     <Button variant="primary">Comprar</Button>
                 </Card.Body>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './ItemListContainer.scss';
 import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
+import { useParams } from "react-router";
 
 //query params
 //const URL = 'https://www.google.com/search?q=coderhouse%limit=10'
@@ -14,6 +15,9 @@ export const ItemListContainer = () => {
     const[loading, setLoading] = useState(false);
 
     console.log(items);
+
+    const params = useParams();
+    console.log(params);
 
     useEffect(() =>{
         setLoading(true)

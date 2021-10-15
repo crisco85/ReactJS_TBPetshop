@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { CartWidget } from '../CartWidget/CartWidget';
 import Logo from './Logo3.png';
 import './NavBar.scss';
@@ -13,10 +14,12 @@ export const NavBar = () => {
                 </div>
                 <div>
                     <ul>
-                        <li><p>Alimento</p></li>
-                        <li><p>Accesorios</p></li>
-                        <li><p>Higiene</p></li>
-                        <li><CartWidget /></li>
+                        <li><NavLink activeClassName={'activeLink'} exact to="/">Inicio</NavLink></li>
+                        <li><NavLink activeClassName={'activeLink'} exact to="/productos">Productos</NavLink></li>
+                        <li><NavLink activeClassName={'activeLink'} exact to="/alimentos">Alimento</NavLink></li>
+                        <li><NavLink activeClassName={'activeLink'} exact to="/higiene">Higiene</NavLink></li>
+                        <li><NavLink activeClassName={'activeLink'} exact to="/juguetes">Juguetes</NavLink></li>
+                        <li><Link to="/cart"><CartWidget /></Link></li>
                     </ul>
                 </div>
             </nav>
