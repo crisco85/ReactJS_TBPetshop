@@ -6,6 +6,7 @@ import { Clock } from './components/Clock/Clock';
 import { Api } from './components/API/Api';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { ItemlistCart } from './components/ItemListCart/ItemListCart';
 
 function App() {
 
@@ -28,6 +29,10 @@ function App() {
 
             <Route exact path="/detail/:itemId">
               <ItemDetailContainer />
+            </Route>
+
+            <Route exact path="/cart">
+              <ItemlistCart />
             </Route>
 
             <Route path="*">
