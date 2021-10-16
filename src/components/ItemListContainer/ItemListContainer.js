@@ -3,6 +3,7 @@ import './ItemListContainer.scss';
 import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
 import { useParams } from "react-router";
+import { Spinner } from "react-bootstrap";
 
 //query params
 //const URL = 'https://www.google.com/search?q=coderhouse%limit=10'
@@ -45,8 +46,12 @@ export const ItemListContainer = () => {
         <section className="container">
 
             {loading 
-                ? <h2>Cargando.....</h2> 
-                : <Itemlist productos={items}/>
+                ? 
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+                : 
+                <Itemlist productos={items}/>
             }
             <hr/>
         </section>

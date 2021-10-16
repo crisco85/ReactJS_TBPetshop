@@ -9,8 +9,9 @@ export const NavBar = () => {
         <header>
             <nav className="nav-menu">
                 <div className="logo-titulo">
-                    <img src={Logo} className="logo-imagen"/>
-                    <h1>TB-PetShop</h1>
+                    <Link to="/">
+                        <img src={Logo} className="logo-imagen"/>
+                    </Link>
                 </div>
                 <div>
                     <ul>

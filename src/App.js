@@ -5,6 +5,7 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import { Clock } from './components/Clock/Clock';
 import { Api } from './components/API/Api';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -23,6 +24,10 @@ function App() {
             
             <Route exact path="/productos/:categoryId">
               <ItemListContainer />
+            </Route>
+
+            <Route exact path="/detail/:itemId">
+              <ItemDetailContainer />
             </Route>
 
             <Route path="*">

@@ -8,8 +8,8 @@ header {
   .logo-titulo {
     display: flex;
     align-items: center;
-    //justify-content: space-between;
-    margin: 0.5rem;
+    //justify-content: space-evenly;
+    //margin: 0.5rem;
 
     h1 {
       font-size: 1.5rem;
@@ -18,12 +18,12 @@ header {
   }
 
   .logo-imagen {
-    width: 25%;
-    height: 25%;
+    width: 35%;
+    height: 35%;
   }
 
   .nav-menu {
-    color: #393264;
+    color: #643532;
     font-family: "Overlock", cursive;
     font-weight: 900;
     font-style: normal;
@@ -44,7 +44,8 @@ header {
     }
 
     .activeLink {
-      border: 2px rgb(167, 25, 6) solid;
+      padding: 0.5rem;
+      border: 1px rgb(224, 48, 25) solid;
       border-radius: 10px;
     }
   }
