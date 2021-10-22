@@ -16,10 +16,10 @@ export const NavBar = () => {
                 <div>
                     <ul>
                         <li><NavLink activeClassName={'activeLink'} exact to="/">Inicio</NavLink></li>
-                        <li><NavLink activeClassName={'activeLink'} exact to="/productos">Productos</NavLink></li>
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/alimento">Alimento</NavLink></li>
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/higiene">Higiene</NavLink></li>
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/juguete">Juguetes</NavLink></li>
+                        <li><NavLink activeClassName={'activeLink'} exact to="/contacto">Contacto</NavLink></li>
                         <li><Link to="/cart"><CartWidget /></Link></li>
                     </ul>
                 </div>

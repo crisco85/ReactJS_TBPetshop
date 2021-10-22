@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import Button from "@restart/ui/esm/Button";
 import './ItemDetail.scss';
+import { ItemCount } from "../ItemCount/ItemCount";
+import { CartContext } from "../../Context/CartContext";
 
-export const ItemDetail = ({id, name, price, img, description, category}) => {
+export const ItemDetail = ({id, name, price, img, description, category, stock}) => {
     
     const {goBack, push} = useHistory();
 
-    const addToCart = () => {
+    const {addToCart} = useContext(CartContext)
+
+    //Aca tengo que controlar la cantidad, para eso utilizo un useState()
+    const [cantidad, setCantidad] = useState(0); //Lo inicializo en cero "0"
+    
+    const handleAgregar = () => {
         const newProduct = {
             id, 
             name, 
             price, 
             category, 
-            cantidad
+            cantidad,
+            stock
         }
-    }
+
+        if(cantidad > 0){
+            addToCart(newProduct) 
+        }
 
     return (
         <div className="container">
@@ -38,12 +49,13 @@ export const ItemDetail = ({id, name, price, img, description, category}) => {
                             Precio: $ {price}
                         </Card.Text>
                     </Card.Body>
-                    {/* <ListGroup className="list-group-flush">
-                        <ListGroupItem>Cras justo odio</ListGroupItem>
-                        <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                        <ListGroupItem>Vestibulum at eros</ListGroupItem>
-                    </ListGroup> */}
                     <Card.Body>
+                        
+                    </Card.Body>  
+                    <Card.Body>
+                        <hr/>
+                        <ItemCount rcantidad={cantidad} rsetCantidad={setCantidad} rstock={stock}/>
+                        <button className="btn btn-success" onClick={handleAgregar}>Agregar</button>
                         <hr/>
                         <button className="btn btn-primary" onClick={() => goBack()}>Volver</button>
                         <button className="btn btn-primary" onClick={() => push("/")}>Inicio</button>

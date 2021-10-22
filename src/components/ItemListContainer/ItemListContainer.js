@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './ItemListContainer.scss';
 import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
 import { useParams } from "react-router";
 import { Spinner } from "react-bootstrap";
+import { MiContext } from "../../Context/MiContext";
 
 //query params
 //const URL = 'https://www.google.com/search?q=coderhouse%limit=10'
@@ -14,6 +15,8 @@ export const ItemListContainer = () => {
 
     const[items, setItems] = useState();
     const[loading, setLoading] = useState(false);
+
+    const contexto = useContext(MiContext);  //tengo que decirle que contexto voy a consumir
 
     console.log(items);
 
