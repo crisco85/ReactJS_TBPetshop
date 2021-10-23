@@ -1,5 +1,17 @@
-.Carrito_imagen {
-  width: 3rem;
-  height: 3rem;
+.carrito {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+
+  .carrito_imagen {
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .carrito_cantidad {
+    margin: 0.5rem;
+  }
 }

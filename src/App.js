@@ -8,60 +8,58 @@ import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { ItemlistCart } from './components/ItemListCart/ItemListCart';
 import { Form } from './components/Form/Form';
-import { CartContext } from './Context/CartContext';
-import { useState } from 'react';
+import { CartProvider } from './Context/CartContext';
+import { UIProvider } from './Context/UIContext';
+
 
 function App() {
 
-  const [carrito, setCarrito] = useState([])
-
-  const addToCart = (item) => {
-      setCarrito( [...carrito, item] )
-  }
-
   return (
 
-    <CartContext.Provider value={ {addToCart} }>
+    <UIProvider>
+      <CartProvider>
 
-      <BrowserRouter>
-          <div className="App">
-              <>
-                <NavBar/>
-                <Clock />
-              </>
-          
-          <Switch>
+        <BrowserRouter>
+            <div className="App">
+                <>
+                  <NavBar/>
+                  <Clock />
+                </>
+            
+            <Switch>
 
-              <Route exact path="/">
-                <ItemListContainer />
-              </Route>
-              
-              <Route exact path="/productos/:categoryId">
-                <ItemListContainer />
-              </Route>
+                <Route exact path="/">
+                  <ItemListContainer />
+                </Route>
+                
+                <Route exact path="/productos/:categoryId">
+                  <ItemListContainer />
+                </Route>
 
-              <Route exact path="/detail/:itemId">
-                <ItemDetailContainer />
-              </Route>
+                <Route exact path="/detail/:itemId">
+                  <ItemDetailContainer />
+                </Route>
 
-              <Route exact path="/contacto">
-                <Form />
-              </Route>
+                <Route exact path="/contacto">
+                  <Form />
+                </Route>
 
 
-              <Route exact path="/cart">
-                <ItemlistCart />
-              </Route>
+                <Route exact path="/cart">
+                  <ItemlistCart />
+                </Route>
 
-              <Route path="*">
-                <Redirect to="/"/>
-              </Route>
-          </Switch>
-          </div>
+                <Route path="*">
+                  <Redirect to="/"/>
+                </Route>
+            </Switch>
+            </div>
+        
+        </BrowserRouter>
       
-      </BrowserRouter>
-    
-    </CartContext.Provider>
+      </CartProvider>
+
+    </UIProvider>
   );
 }
 

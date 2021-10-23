@@ -11,7 +11,7 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
     
     const {goBack, push} = useHistory();
 
-    const {addToCart} = useContext(CartContext)
+    const {addToCart, isInCart} = useContext(CartContext)
 
     //Aca tengo que controlar la cantidad, para eso utilizo un useState()
     const [cantidad, setCantidad] = useState(0); //Lo inicializo en cero "0"
@@ -29,6 +29,7 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
         if(cantidad > 0){
             addToCart(newProduct) 
         }
+    }
 
     return (
         <div className="container">
@@ -54,9 +55,16 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
                     </Card.Body>  
                     <Card.Body>
                         <hr/>
-                        <ItemCount rcantidad={cantidad} rsetCantidad={setCantidad} rstock={stock}/>
-                        <button className="btn btn-success" onClick={handleAgregar}>Agregar</button>
+                            { isInCart(id) 
+                                ? <Link to="/cart" className="btn btn-success">Terminar mi compra</Link> 
+                                : 
+                                    <>
+                                        <ItemCount rcantidad={cantidad} rsetCantidad={setCantidad} rstock={stock}/>
+                                        <button className="btn btn-success" onClick={handleAgregar}>Agregar</button>
+                                    </>
+                            }
                         <hr/>
+                        
                         <button className="btn btn-primary" onClick={() => goBack()}>Volver</button>
                         <button className="btn btn-primary" onClick={() => push("/")}>Inicio</button>
                     </Card.Body>

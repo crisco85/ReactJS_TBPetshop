@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router";
+import { UIContext } from "../../Context/UIContext";
 import { pedirProductos } from "../../helpers/pedirProductos";
 import { ItemDetail } from "./ItemDetail";
 import './ItemDetailContainer.scss';
@@ -8,7 +9,8 @@ import './ItemDetailContainer.scss';
 export const ItemDetailContainer = () => {
 
     const [item, setItem] = useState();
-    const [loading, setLoading] = useState(false);
+    
+    const {loading, setLoading} = useContext(UIContext);
 
     const {itemId} = useParams();
 
