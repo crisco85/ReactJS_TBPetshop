@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router";
 import { UIContext } from "../../Context/UIContext";
 import { pedirProductos } from "../../helpers/pedirProductos";
+import { Loader } from "../Loader/Loader";
 import { ItemDetail } from "./ItemDetail";
 import './ItemDetailContainer.scss';
 
@@ -32,9 +32,7 @@ export const ItemDetailContainer = () => {
         <div className="container itemDetail">
             {
                 loading ? 
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner> 
+                <Loader />
                 :
                 <ItemDetail {...item}/>
             }

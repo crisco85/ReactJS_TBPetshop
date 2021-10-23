@@ -3,9 +3,10 @@ import './ItemListContainer.scss';
 import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
 import { useParams } from "react-router";
-import { Spinner } from "react-bootstrap";
 import { CartContext } from "../../Context/CartContext";
 import { UIContext } from "../../Context/UIContext";
+import { Loader } from "../Loader/Loader";
+import { getFireStore } from "../../firebase/config";
 
 //query params
 //const URL = 'https://www.google.com/search?q=coderhouse%limit=10'
@@ -28,6 +29,28 @@ export const ItemListContainer = () => {
     useEffect(() =>{
         setLoading(true)
 
+        const db = getFireStore();
+
+        const productos = db.collection('productos');
+
+        productos.get()
+            .then((response) =>{
+                console.log(response.docs)
+                const newItems = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()}
+                })
+                
+                setItems(newItems)
+
+            })
+
+            .catch((err) => console.log(err))
+            .finally(() => {
+                setLoading(false) 
+            }) 
+
+        /* setLoading(true)
+
         pedirProductos()
             .then((res) => {
                 if(categoryId){
@@ -41,20 +64,18 @@ export const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false) 
                 console.log("Fin")
-            })
+            }) */
             
-    }, [categoryId])  //categoryId como dependencia
+    }, [categoryId, setLoading])  //categoryId como dependencia
 
-    
+    //render con earle return
 
     return(
         <section className="container">
 
             {loading 
                 ? 
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
+                <Loader />
                 : 
                 <Itemlist productos={items}/>
             }
