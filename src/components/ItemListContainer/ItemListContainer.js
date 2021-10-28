@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import './ItemListContainer.scss';
-import { pedirProductos } from "../../helpers/pedirProductos";
+//import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
 import { useParams } from "react-router";
 import { CartContext } from "../../Context/CartContext";
@@ -31,23 +31,26 @@ export const ItemListContainer = () => {
 
         const db = getFireStore();
 
-        const productos = db.collection('productos');
+        const productos = categoryId
+                          ?  db.collection('productos').where('category', '==', categoryId)
+                          :  db.collection('productos')
+        
+            productos.get()
+                .then((response) =>{
+                    console.log(response.docs)
+                    const newItems = response.docs.map((doc) => {
+                        return {id: doc.id, ...doc.data()}
+                    })
+                    
+                    setItems(newItems)
 
-        productos.get()
-            .then((response) =>{
-                console.log(response.docs)
-                const newItems = response.docs.map((doc) => {
-                    return {id: doc.id, ...doc.data()}
                 })
-                
-                setItems(newItems)
 
-            })
-
-            .catch((err) => console.log(err))
-            .finally(() => {
-                setLoading(false) 
-            }) 
+                .catch((err) => console.log(err))
+                .finally(() => {
+                    setLoading(false) 
+                }) 
+        
 
         /* setLoading(true)
 
