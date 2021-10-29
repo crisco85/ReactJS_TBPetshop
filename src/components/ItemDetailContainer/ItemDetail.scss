@@ -3,9 +3,22 @@ h2 {
 }
 
 .card {
+  width: 35%;
+  height: 50%;
+
   .card-title {
     text-align: center;
     margin: 1rem;
+  }
+
+  .card-body {
+    text-align: center;
+    margin: 0.25rem;
+
+    img {
+      width: 20rem;
+      height: 20rem;
+    }
   }
 }
 
@@ -17,4 +30,9 @@ h2 {
 
 button {
   margin: 1rem;
+}
+
+.desactivado {
+  opacity: 0.4;
+  pointer-events: none;
 }

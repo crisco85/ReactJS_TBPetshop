@@ -16,9 +16,17 @@ export const ItemCount = ( {rcantidad, rsetCantidad, rstock} ) => {
 
     return(
         <div>
-            <button className="btn btn-primary" onClick={handleRestar}>-</button>
-            <span className="mx-3">{rcantidad}</span>
-            <button className="btn btn-primary" onClick={handleSumar}>+</button>
+            <button
+                className={`btn ${rcantidad === 0 ? "btn-danger desactivado" : "btn-primary"}`} 
+                onClick={handleRestar}
+                >-
+            </button>
+            <span className="mx-2">{rcantidad}</span>
+            <button
+                className={`btn ${rcantidad === rstock ? "btn-danger desactivado" : "btn-primary"}`}  
+                onClick={handleSumar}
+                >+
+            </button>
         </div>
     )
 }

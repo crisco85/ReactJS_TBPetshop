@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { GoTrashcan } from "react-icons/go";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 
 
@@ -14,8 +14,10 @@ export const ItemlistCart = () => {
 
             { carrito.length === 0 
                 ?   <>
-                        <h2>No hay items agregados</h2>
-                        <Link to="/" className="btn btn-primary">Listado de productos</Link>
+                        {/* <h2>No hay items agregados</h2>
+                        <Link to="/" className="btn btn-primary">Listado de productos</Link> */}
+
+                        <Redirect to="/"/>
                     </>
                    
                 :

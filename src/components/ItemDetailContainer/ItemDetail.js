@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
-import Button from "@restart/ui/esm/Button";
 import './ItemDetail.scss';
 import { ItemCount } from "../ItemCount/ItemCount";
 import { CartContext } from "../../Context/CartContext";
@@ -36,7 +35,7 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
             <hr/>
             <h2>Detalle de Producto</h2>
             <div className="mycardetail">
-                <Card style={{ width: '18rem' }}>
+                <Card>
                     <Card.Title>{name}</Card.Title>
                     <Card.Body>
                         <Card.Img variant="top" src={img} />
@@ -55,14 +54,19 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
                     </Card.Body>  
                     <Card.Body>
                         <hr/>
-                            { isInCart(id) 
-                                ? <Link to="/cart" className="btn btn-success">Terminar mi compra</Link> 
-                                : 
-                                    <>
-                                        <ItemCount rcantidad={cantidad} rsetCantidad={setCantidad} rstock={stock}/>
-                                        <button className="btn btn-success" onClick={handleAgregar}>Agregar</button>
-                                    </>
-                            }
+                                <div className={isInCart(id) && "desactivado"}>
+                                    <ItemCount rcantidad={cantidad} rsetCantidad={setCantidad} rstock={stock}/>
+                                    <button
+                                        disabled={cantidad === 0}
+                                        className={isInCart(id) ? "btn btn-danger mx-2" : "btn btn-success mx -2"} 
+                                        onClick={handleAgregar}
+                                        >Agregar
+                                    </button>
+                                </div>
+
+                                <Link to="/cart" className={isInCart(id) ? "btn btn-success" : "btn btn-success desactivado"}
+                                    >Terminar mi compra
+                                </Link> 
                         <hr/>
                         
                         <button className="btn btn-primary" onClick={() => goBack()}>Volver</button>
