@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { UserAuthContext } from '../../Context/UserAuthContext';
 import { CartWidget } from '../CartWidget/CartWidget';
 import Logo from './Logo3.png';
 import './NavBar.scss';
 
 export const NavBar = () => {
+
+    const { isAuthenticated, logout } = useContext(UserAuthContext);
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        logout();
+    }
+
     return(
         <header>
             <nav className="nav-menu">
@@ -21,6 +30,7 @@ export const NavBar = () => {
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/juguete">Juguetes</NavLink></li>
                         <li><NavLink activeClassName={'activeLink'} exact to="/contacto">Contacto</NavLink></li>
                         <li><Link to="/cart"><CartWidget /></Link></li>
+                        {!isAuthenticated || <button onClick={logout}>Salir</button>}
                     </ul>
                 </div>
             </nav>

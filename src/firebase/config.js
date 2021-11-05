@@ -32,3 +32,5 @@ const firebaseConfig = {
  export const getAuth = () => {
     return firebase.auth(app)
  }
+
+ export const provider = new firebase.auth.GoogleAuthProvider();
