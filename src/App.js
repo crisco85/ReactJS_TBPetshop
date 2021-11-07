@@ -78,11 +78,9 @@ function App() {
                       </div>
                     </>
                     ) : (
-                    <UserAuthenticate/>
+                    <UserAuthenticate />
                     )
                   }
-
-                    
                 </Switch>
           
           </BrowserRouter>
