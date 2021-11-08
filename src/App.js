@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavBar} from './components/NavBar/NavBar';
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import { Clock } from './components/Clock/Clock';
-//import { Api } from './components/API/Api';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { ItemlistCart } from './components/ItemListCart/ItemListCart';
