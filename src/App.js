@@ -12,6 +12,7 @@ import { UIProvider } from './Context/UIContext';
 import { useContext } from 'react';
 import { UserAuthContext } from './Context/UserAuthContext';
 import { UserAuthenticate } from './components/UserAuthenticate/UserAuthenticate';
+import { Checkout } from './components/Checkout/Checkout';
 
 
 function App() {
@@ -53,6 +54,10 @@ function App() {
 
                   <Route exact path="/cart">
                     <ItemlistCart />
+                  </Route>
+
+                  <Route exact path="/checkout">
+                    <Checkout />
                   </Route>
 
                   <Route path="*">

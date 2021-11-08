@@ -45,6 +45,8 @@ export const ItemlistCart = () => {
                             <h3 className="my-5">Precio total: ${calcularTotal()}</h3>
                         <hr/>
                         <button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar Carrito</button>
+                        <Link to="/checkout" className="btn btn-success mx-3">Terminar mi compra</Link>
+
                     </>    
             }
 
