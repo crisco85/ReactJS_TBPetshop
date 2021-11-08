@@ -48,6 +48,15 @@ header {
       }
     }
 
+    button {
+      border-radius: 10px;
+      background-color: #864844;
+      color: rgb(245, 236, 236);
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
     .activeLink {
       padding: 0.5rem;
       border: 1px rgb(224, 48, 25) solid;

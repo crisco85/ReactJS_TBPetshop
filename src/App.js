@@ -9,16 +9,21 @@ import { ItemlistCart } from './components/ItemListCart/ItemListCart';
 import { Form } from './components/Form/Form';
 import { CartProvider } from './Context/CartContext';
 import { UIProvider } from './Context/UIContext';
+import { useContext } from 'react';
+import { UserAuthContext } from './Context/UserAuthContext';
+import { UserAuthenticate } from './components/UserAuthenticate/UserAuthenticate';
 
 
 function App() {
 
+  const {isAuthenticated} = useContext(UserAuthContext);
+
   return (
+    <>
+      <UIProvider>
+        <CartProvider>
 
-    <UIProvider>
-      <CartProvider>
-
-        <BrowserRouter>
+          <BrowserRouter>
             <div className="App">
                 <>
                   <NavBar/>
@@ -26,39 +31,48 @@ function App() {
                 </>
             
             <Switch>
+              {isAuthenticated 
+                ?
+                <>
+                  <Route exact path="/">
+                    <ItemListContainer />
+                  </Route>
+                  
+                  <Route exact path="/productos/:categoryId">
+                    <ItemListContainer />
+                  </Route>
 
-                <Route exact path="/">
-                  <ItemListContainer />
-                </Route>
+                  <Route exact path="/detail/:itemId">
+                    <ItemDetailContainer />
+                  </Route>
+
+                  <Route exact path="/contacto">
+                    <Form />
+                  </Route>
+
+
+                  <Route exact path="/cart">
+                    <ItemlistCart />
+                  </Route>
+
+                  <Route path="*">
+                    <Redirect to="/"/>
+                  </Route>
+                </>
+                :
                 
-                <Route exact path="/productos/:categoryId">
-                  <ItemListContainer />
-                </Route>
-
-                <Route exact path="/detail/:itemId">
-                  <ItemDetailContainer />
-                </Route>
-
-                <Route exact path="/contacto">
-                  <Form />
-                </Route>
-
-
-                <Route exact path="/cart">
-                  <ItemlistCart />
-                </Route>
-
-                <Route path="*">
-                  <Redirect to="/"/>
-                </Route>
+                <UserAuthenticate />
+              }
             </Switch>
             </div>
         
-        </BrowserRouter>
+          </BrowserRouter>
       
-      </CartProvider>
+        </CartProvider>
 
-    </UIProvider>
+      </UIProvider>
+    </>
+
   );
 }
 
