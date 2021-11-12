@@ -22,7 +22,8 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
             price, 
             category, 
             cantidad,
-            stock
+            stock,
+            img
         }
 
         if(cantidad > 0){

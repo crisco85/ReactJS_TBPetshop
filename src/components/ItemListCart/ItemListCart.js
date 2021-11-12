@@ -29,6 +29,7 @@ export const ItemlistCart = () => {
                             carrito.map((prod) =>(
                                 <>
                                     <hr/>
+                                    <img src={prod.img}/>
                                     <h4>Producto: {prod.name}</h4>
                                     <h4>Cantidad: {prod.cantidad}</h4>
                                     <h4>Precio: {prod.price * prod.cantidad}</h4>

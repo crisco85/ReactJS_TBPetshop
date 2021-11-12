@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
+import Swal from 'sweetalert2';
 import { CartContext } from "../../Context/CartContext";
 
 export const Checkout = () => {
 
-    const { carrito } = useContext(CartContext);
+    const { carrito, calcularTotal } = useContext(CartContext);
 
     const [values, setValues] = useState( {
         nombre: '',
@@ -24,12 +25,48 @@ export const Checkout = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
 
+        if(values.nombre.length < 3){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor ingrese su nombre correctamente',
+              })
+        }
+
+        if(values.apellido.length < 3){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor ingrese su apellido correctamente',
+              })
+        }
+
+        if(values.telefono.length < 3){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor ingrese su telefono correctamente',
+              })
+        }
+
+        if(values.email.length < 3){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor ingrese su telefono correctamente',
+              })
+        }
+
+
         const orden = {
             buyer: {
                 ...values
             },
-            items:
+            items: carrito.map((ord) => ({id: ord.id, name: ord.name, precio: ord.precio, cantidad: ord.cantidad})),
+            total: calcularTotal()
         }
+
+        console.log(orden)
     }
 
     return(
