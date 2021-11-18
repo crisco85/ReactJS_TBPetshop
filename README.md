@@ -7,65 +7,48 @@ con mascotas
 
 Este proyecto esta casi totalmente realizado con React, por lo cual es viable hacer modificaciones a través del comando npm install
 
-### `npm start`
+### Web publicada
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Podemos ver el proyecto publicado en el siguiente enlace(https://tb-petshop.netlify.app/) y es posible ver una demo de su utilización en el siguiente link ()
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Librerias y tecnologias utilizadas
 
-### `npm test`
+Bootstrap
+React-Bootstrap es una excelente opción para utilizar como base para generar la interfaz de usuario, podemos encontrar compatibilidad y temas únicos que como indicamos previamente son facules de utilizar (https://react-bootstrap.github.io/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Instalación: npm install react-bootstrap@next bootstrap@5.1.1
 
-### `npm run build`
+SASS
+Es un lenguaje fácil de usar que nos ayuda a reducir muchos de los desafíos de repetición y mantenibilidad del CSS tradicional, es muy practico e intuitivo una vez que se le da uso (https://sass-lang.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Instalación: npm install node-sass
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+REACT-ROUTER-DOM
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Instalación: npm install react-router.dom
 
-### `npm run eject`
+SWEETALERT
+Las alertas que va generando el sistema se realizan a traves de SweetAlert ya que tiene alertas muy simples y fáciles de preconfigurar (https://sweetalert2.github.io)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Instalación: npm install sweetalert2
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Firebase
+Base de datos en la nube que nos ayuda con el repositorio de productores y ordenes que vamos generando
+(https://firebase.google.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Login
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+El Login generado es un MOC sencillo que solo funciona presiona el botón de Login, en es instante se genera un nuevo botón "Salir" en la parte superior derecha de la pantalla para simular el logueo de un usuario en sistema
 
-## Learn More
+### Sobre la Aplicación
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La aplicación se inicia con el login previamente comentado, luego se divide en;
+Inicio: Vista principal que agrupa todos los productos del Ecommerce
+Categorias: Hay una vista por categorias, generamos 3 principales (Alimento, Higiene y Juguetes) pero altamente escalable
+Detalle del producto: Tenemos también una vista por producto con los detalles individuales del mismo
+Carrito: Hay un carrito de compras generado que lista los articulos que vamos agregando para posteriormente simular la compra de un usuario
+Navbar: Tenemos un Navbar generado que nos facilita la navegación entre las vistas previamente indicadas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Autor
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Cristian Alberto Correa - Estudiante entusiasta
