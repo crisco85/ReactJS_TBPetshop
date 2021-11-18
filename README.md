@@ -9,30 +9,30 @@ Este proyecto esta casi totalmente realizado con React, por lo cual es viable ha
 
 ### Web publicada
 
-Podemos ver el proyecto publicado en el siguiente enlace(https://tb-petshop.netlify.app/) y es posible ver una demo de su utilización en el siguiente link ()
+Podemos ver el proyecto publicado en el siguiente enlace(https://tb-petshop.netlify.app/) y se agrego una carpeta "Video" en el repo para poder ver el funcionamiento en tiempo real a traves de un gif.
 
 ### Librerias y tecnologias utilizadas
 
-Bootstrap
+BOOTSTRAP:
 React-Bootstrap es una excelente opción para utilizar como base para generar la interfaz de usuario, podemos encontrar compatibilidad y temas únicos que como indicamos previamente son facules de utilizar (https://react-bootstrap.github.io/)
 
 - Instalación: npm install react-bootstrap@next bootstrap@5.1.1
 
-SASS
+SASS:
 Es un lenguaje fácil de usar que nos ayuda a reducir muchos de los desafíos de repetición y mantenibilidad del CSS tradicional, es muy practico e intuitivo una vez que se le da uso (https://sass-lang.com/)
 
 - Instalación: npm install node-sass
 
-REACT-ROUTER-DOM
+REACT-ROUTER-DOM:
 
 - Instalación: npm install react-router.dom
 
-SWEETALERT
+SWEETALERT:
 Las alertas que va generando el sistema se realizan a traves de SweetAlert ya que tiene alertas muy simples y fáciles de preconfigurar (https://sweetalert2.github.io)
 
 - Instalación: npm install sweetalert2
 
-Firebase
+FIREBASE:
 Base de datos en la nube que nos ayuda con el repositorio de productores y ordenes que vamos generando
 (https://firebase.google.com/)
 
