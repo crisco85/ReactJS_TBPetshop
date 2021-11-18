@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { GoTrashcan } from "react-icons/go";
 import { Link, Redirect } from "react-router-dom";
-
-
+import './ItemListCart.scss';
 
 export const ItemlistCart = () => {
 
@@ -29,14 +28,22 @@ export const ItemlistCart = () => {
                             carrito.map((prod) =>(
                                 <>
                                     <hr/>
-                                    <img src={prod.img}/>
-                                    <h4>Producto: {prod.name}</h4>
-                                    <h4>Cantidad: {prod.cantidad}</h4>
-                                    <h4>Precio: {prod.price * prod.cantidad}</h4>
-                                    <button className="btn btn-danger" 
-                                        onClick={() => removeItem(prod.id)}>
-                                            <GoTrashcan />
-                                        </button>
+                                    <div className="listcart">
+                                        <div className="detallescart">
+                                            <h4>Producto: {prod.name}</h4>
+                                            <h4>Cantidad: {prod.cantidad}</h4>
+                                            <h4>Precio: {prod.price * prod.cantidad}</h4>
+                                        </div>
+                                        <div>
+                                            <img src={prod.img}/>
+                                        </div>
+                                        <div>
+                                            <button className="btn btn-danger" 
+                                                onClick={() => removeItem(prod.id)}>
+                                                    <GoTrashcan />
+                                            </button>
+                                        </div>
+                                    </div>
                                     <hr/>
                                 </>
                             ))
