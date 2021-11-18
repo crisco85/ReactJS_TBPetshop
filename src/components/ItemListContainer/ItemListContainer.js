@@ -1,16 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import './ItemListContainer.scss';
-//import { pedirProductos } from "../../helpers/pedirProductos";
 import { Itemlist } from "./ItemList";
 import { useParams } from "react-router";
-import { CartContext } from "../../Context/CartContext";
+//import { CartContext } from "../../Context/CartContext";
 import { UIContext } from "../../Context/UIContext";
 import { Loader } from "../Loader/Loader";
 import { getFireStore } from "../../firebase/config";
-
-//query params
-//const URL = 'https://www.google.com/search?q=coderhouse%limit=10'
-
 
 
 export const ItemListContainer = () => {
@@ -19,9 +13,8 @@ export const ItemListContainer = () => {
     
     const {loading, setLoading} = useContext(UIContext);
 
-    const contexto = useContext(CartContext);  //tengo que decirle que contexto voy a consumir
+    //const contexto = useContext(CartContext);  //tengo que decirle que contexto voy a consumir
 
-    console.log(items);
 
     //const params = useParams();
     const {categoryId} = useParams();  //Desestructuro
@@ -37,7 +30,7 @@ export const ItemListContainer = () => {
         
             productos.get()
                 .then((response) =>{
-                    console.log(response.docs)
+                    //console.log(response.docs)
                     const newItems = response.docs.map((doc) => {
                         return {id: doc.id, ...doc.data()}
                     })

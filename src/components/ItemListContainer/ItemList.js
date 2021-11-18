@@ -1,5 +1,4 @@
 import React from "react";
-import './ItemList.scss';
 import { Item } from "./Item";
 
 export const Itemlist = ({productos = []}) => {

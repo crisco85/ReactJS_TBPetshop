@@ -4,7 +4,9 @@ h2 {
 
 .card {
   width: 35%;
-  height: 50%;
+  height: 40%;
+  border-radius: 1rem;
+  border-color: rgb(194, 177, 177);
 
   .card-title {
     text-align: center;
@@ -13,11 +15,13 @@ h2 {
 
   .card-body {
     text-align: center;
+    justify-content: center;
+    align-items: center;
     margin: 0.25rem;
 
     img {
-      width: 20rem;
-      height: 20rem;
+      width: 12vw;
+      height: 12vw;
     }
   }
 }

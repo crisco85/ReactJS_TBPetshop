@@ -3,15 +3,25 @@
   margin: 1rem;
 
   .card-img-top {
-    width: 13vw;
-    height: 13vw;
+    width: 10vw;
+    height: 10vw;
   }
 
   .card {
+    width: 18rem;
+    height: 35rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-color: rgb(134, 132, 126);
     border-radius: 1rem;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

@@ -40,19 +40,17 @@ export const ItemDetail = ({id, name, price, img, description, category, stock})
                     <Card.Title>{name}</Card.Title>
                     <Card.Body>
                         <Card.Img variant="top" src={img} />
+                        <hr/>
                         <Card.Text>
                             Descripción: {description}
                         </Card.Text>
                         <Card.Text>
                             Categoria: {category}
                         </Card.Text>
-                        <Card.Text>
+                        <Card.Title>
                             Precio: $ {price}
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Body>
-                        
-                    </Card.Body>  
+                        </Card.Title>
+                    </Card.Body> 
                     <Card.Body>
                         <hr/>
                                 <div className={isInCart(id) && "desactivado"}>
