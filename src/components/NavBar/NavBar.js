@@ -27,7 +27,6 @@ export const NavBar = () => {
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/alimento">Alimento</NavLink></li>
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/higiene">Higiene</NavLink></li>
                         <li><NavLink activeClassName={'activeLink'} exact to="/productos/juguete">Juguetes</NavLink></li>
-                        {/* <li><NavLink activeClassName={'activeLink'} exact to="/contacto">Contacto</NavLink></li> */}
                         <li><Link to="/cart"><CartWidget /></Link></li>
                         { !isAuthenticated || <button className="btn btn-danger" onClick={handleSubmit}>Salir</button> } 
                     </ul>

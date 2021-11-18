@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-//import Carrito from './Carrito.png';
 import './CartWidget.scss';
 import { FiShoppingCart } from "react-icons/fi";
 import { CartContext } from "../../Context/CartContext";

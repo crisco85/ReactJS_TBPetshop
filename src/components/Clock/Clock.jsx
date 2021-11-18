@@ -4,11 +4,6 @@ import './Clock.scss';
 export const Clock = () => {
     const [time, setTime] = useState (new Date());
 
-    /* const handleTime = () =>{
-        setTime( new Date())
-        console.log(time)
-    } */
-
     useEffect(() => {  //trabaja con lo siglos de vida de mi componente
                 
         setTimeout (() => {  //solo se ejecuta en el montaje, por ejemplo llamado a la api

@@ -1,10 +1,11 @@
-# Getting Started with Create React App
+# TB-Petshop Ecommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TB-Petshop es una aplicación Ecommerce totalmente integrada para gestión de venta de productos relacionados
+con mascotas
 
-## Available Scripts
+## Inicio
 
-In the project directory, you can run:
+Este proyecto esta casi totalmente realizado con React, por lo cual es viable hacer modificaciones a través del comando npm install
 
 ### `npm start`
 

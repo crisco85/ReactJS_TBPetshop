@@ -13,8 +13,9 @@ export const CartProvider = ( {children} ) => {
         setCarrito( [...carrito, item] )
     }
 
+    //me devuelve true o false, si mi item esta o no en el carrito
     const isInCart = (itemId) =>{
-        return carrito.some((prod) => prod.id === itemId) //me devuelve true o false, si mi item esta o no en el carrito
+        return carrito.some((prod) => prod.id === itemId)
     }
 
     const removeItem = (itemId) =>{
@@ -22,9 +23,9 @@ export const CartProvider = ( {children} ) => {
         setCarrito(newCart)
     } 
 
+    //reduce: recorre un array y me retorna en este caso del acumulador + la cantidad de mis productos
     const calcularCantidad = () => {
         return carrito.reduce( (acumulador, prod) => acumulador + prod.cantidad, 0 )
-    //reduce: recorre un array y me retorna en este caso del acumulador + la cantidad de mis productos
     }
 
     const calcularTotal = () => {

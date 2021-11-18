@@ -8,22 +8,18 @@ export const ItemlistCart = () => {
 
     const {carrito, vaciarCarrito, removeItem, calcularTotal} = useContext(CartContext)
 
+    //uso un ternario para validar si mi carrito tiene algo y en base a eso visualizo
     return (
         <div className="container">
 
             { carrito.length === 0 
                 ?   <>
-                        {/* <h2>No hay items agregados</h2>
-                        <Link to="/" className="btn btn-primary">Listado de productos</Link> */}
-
                         <Redirect to="/"/>
                     </>
-                   
                 :
                     <>
                         <h2>Carrito de compras</h2>
                         <hr/>
-
                         {
                             carrito.map((prod) =>(
                                 <>
